@@ -105,8 +105,8 @@ report_table = f"""
                         <th>Student ID</th>
                         <th>Student Name</th>
                         <th>Week</th>
-                        <th>Present Files</th>
-                        <th>Missing Files</th>
+                        <th>Completed Task</th>
+                        <th>Pending Task</th>
                     </tr>
                 </thead>
                 <tbody>
