@@ -1,12 +1,13 @@
 import os
 import datetime
 
+
+
 # Path to the parent directory containing student folders
-parent_folder_path = "PPP"
+parent_folder_path = "Students"
 
 # Student data in the format: {student_id: student_name}
 student_data = {
-    
     # Add more students here...
     "PPP001": "Mohamed Hasir",
     "PPP002": "Ganesh Kumar R",
@@ -117,7 +118,7 @@ for student_id, student_name in student_data.items():
     week_folder_path = os.path.join(student_folder_path, week_folder_name)
 
     if os.path.exists(student_folder_path) and os.path.isdir(student_folder_path) and os.path.exists(week_folder_path) and os.path.isdir(week_folder_path):
-        expected_files = ["git task.PNG", "file2.png", "file3.docx"]  # List of expected files
+        expected_files = ["Git_task.png", "file2.png", "file3.docx"]  # List of expected files
         
         present_files, missing_files = validate_week_folder(week_folder_path, expected_files)
         
@@ -153,21 +154,10 @@ report_table += """
 """
 
 # Save report to a file
-with open(f"{specific_week}_report.html", "w") as report_file:
+report_filename = f"{specific_week}_report.html"
+with open(report_filename, "w") as report_file:
     report_file.write(report_table)
 
-    # Save report to a CSV file
-csv_filename = f"{specific_week}_report.csv"
-with open(csv_filename, "w") as csv_file:
-    # Write CSV header
-    csv_file.write("Student ID,Student Name,Week,Present Files,Missing Files\n")
-    
-    # Loop through student_data and write CSV rows
-    for student_id, student_name in student_data.items():
-        # ... (your existing logic for extracting present_files_str and missing_files_str)
-        
-        csv_row = f'"{student_id}","{student_name}","{week_folder_name}","{present_files_str}","{missing_files_str}"\n'
-        csv_file.write(csv_row)
+# Print a message indicating HTML report generation
+print(f"HTML report generated: {report_filename}")
 
-# Print a message indicating CSV generation
-print(f"CSV report generated: {csv_filename}")

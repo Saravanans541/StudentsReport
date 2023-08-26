@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+        }
+        .task-table {
+            width: 60%;
+            margin: 0 auto;
+        }
+        .task-row {
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .task-row:hover {
+            background-color: #f8f9fa;
+        }
+        .copy-button,
+        .view-image-button {
+            padding: 10px 20px;
+            font-size: 18px;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+        .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function copyTaskName(taskName) {
+            const tempInput = document.createElement("input");
+            tempInput.value = taskName;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert("Task name copied: " + taskName);
+        }
+        
+        function openImagePopup(imageSrc) {
+            const popup = document.querySelector('.popup');
+            const image = popup.querySelector('img');
+            image.src = imageSrc;
+            popup.style.display = 'flex';
+        }
+        
+        function closeImagePopup() {
+            const popup = document.querySelector('.popup');
+            popup.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Pepper Programming ++</h1>
+        <h2 class="text-center mb-4">Week 01 Task</h2>
+        
+        
+        <table class="table task-table">
+            <tbody>
+                <tr class="task-row">
+                    <td>Git_task</td>
+                    <td>
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Git_task')">Copy Task Name</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/git task.PNG')">Sample Image</button>
+                    </td>
+                </tr>
+                <tr class="task-row">
+                    <td>Index_File_creation</td>
+                    <td>
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Index_File_creation')">Copy Task Name</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('index_file.png')">Sample Image</button>
+                    </td>
+                </tr>
+                <tr class="task-row">
+                    <td>Linkedin_Instagram_Twitter_added</td>
+                    <td>
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Linkedin_Instagram_Twitter_added')">Copy Task Name</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('social_media.png')">Sample Image</button>
+                    </td>
+                </tr>
+                <tr class="task-row">
+                    <td>Resume_added</td>
+                    <td>
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Resume_added')">Copy Task Name</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('resume.png')">Sanple Image</button>
+                    </td>
+                </tr>
+                <tr class="task-row">
+                    <td>Resume_added</td>
+                    <td>
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Resume_added')">Copy Task Name</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('resume.png')">Sanple Image</button>
+                    </td>
+                </tr>
+                <!-- Add more tasks here -->
+            </tbody>
+        </table>
+        
+        <div class="popup" onclick="closeImagePopup()">
+            <button class="close-button" onclick="closeImagePopup()">&times;</button>
+            <img src="" alt="Popup Image">
+        </div>
+    </div>
+</body>
+</html>
