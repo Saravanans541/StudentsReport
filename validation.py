@@ -118,7 +118,7 @@ for student_id, student_name in student_data.items():
     week_folder_path = os.path.join(student_folder_path, week_folder_name)
 
     if os.path.exists(student_folder_path) and os.path.isdir(student_folder_path) and os.path.exists(week_folder_path) and os.path.isdir(week_folder_path):
-        expected_files = ["Git_task.png", "file2.png", "file3.docx"]  # List of expected files
+        expected_files = ["Git_task.png", "Index_File_creation.png", "Linkedin_Instagram_Twitter_added.png", "Resume_added.png"]  # List of expected files
         
         present_files, missing_files = validate_week_folder(week_folder_path, expected_files)
         
