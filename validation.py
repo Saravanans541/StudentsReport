@@ -47,7 +47,7 @@ def validate_week_folder(week_folder_path, expected_files):
     return present_files, missing_files
 
 # Specific week you want to check
-specific_week = "Week02"
+specific_week = "Week01"
 
 # Get current date and time
 current_datetime = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
