@@ -5,27 +5,58 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            background-color: #f5f5f5;
         }
         .task-table {
-            width: 60%;
-            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 1200px; /* Adjust the max-width as needed */
+            background-color: white;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            padding: 20px;
+        }
+        .task-card {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin: 0 10px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+        }
+        .task-card h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
         }
         .task-row {
-            cursor: pointer;
-            transition: background-color 0.3s;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
-        .task-row:hover {
-            background-color: #f8f9fa;
+        .task-details {
+            flex: 1;
+            word-wrap: break-word;
+            max-width: 70%;
+        }
+        .task-actions {
+            display: flex;
+            align-items: center;
         }
         .copy-button,
         .view-image-button {
-            padding: 10px 20px;
-            font-size: 18px;
+            padding: 5px 10px;
+            font-size: 14px;
+            width: 70px;
+        }
+        .copy-button + .view-image-button {
+            margin-left: 5px;
         }
         .popup {
             display: none;
@@ -48,7 +79,7 @@
             right: 10px;
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: 18px;
             color: white;
             cursor: pointer;
         }
@@ -80,54 +111,94 @@
 <body>
     <div class="container mt-5">
         <h1 class="text-center mb-4">Pepper Programming ++</h1>
-        <h2 class="text-center mb-4">Week 01 Task</h2>
+        <h2 class="text-center mb-4">Weekly task list</h2>
         
-        
-        <table class="table task-table">
-            <tbody>
-                <tr class="task-row">
-                    <td>Git_task</td>
-                    <td>
-                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Git_task')">Copy Task Name</button>
+        <div class="task-table">
+            <div class="task-card">
+                <h2>Week 01 Task</h2>
+                <!-- Week 1 Tasks -->
+                <div class="task-row">
+                    <div class="task-details">Git_Task</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Git_task')">Copy</button>
                         <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/git task.PNG')">Sample Image</button>
-                    </td>
-                </tr>
-                <tr class="task-row">
-                    <td>Index_File_creation</td>
-                    <td>
-                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Index_File_creation')">Copy Task Name</button>
-                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('index_file.png')">Sample Image</button>
-                    </td>
-                </tr>
-                <tr class="task-row">
-                    <td>Linkedin_Instagram_Twitter_added</td>
-                    <td>
-                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Linkedin_Instagram_Twitter_added')">Copy Task Name</button>
-                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('social_media.png')">Sample Image</button>
-                    </td>
-                </tr>
-                <tr class="task-row">
-                    <td>Resume_added</td>
-                    <td>
-                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Resume_added')">Copy Task Name</button>
-                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('resume.png')">Sanple Image</button>
-                    </td>
-                </tr>
-                <tr class="task-row">
-                    <td>Resume_added</td>
-                    <td>
-                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Resume_added')">Copy Task Name</button>
-                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('resume.png')">Sanple Image</button>
-                    </td>
-                </tr>
-                <!-- Add more tasks here -->
-            </tbody>
-        </table>
+                    </div>
+                </div>
+                <!-- ... Other Week tasks ... -->
+                <div class="task-row">
+                    <div class="task-details">Index_File_Updation</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('Index_file_creation')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/Index_File_Updation.PNG')">Sample Image</button>
+                    </div>
+                </div>
+                <!-- ... Other Week tasks ... -->
+                <div class="task-row">
+                    <div class="task-details">create_Html_file_on_Name</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('create_Html_file_on_Name')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/create_Html_file_on_Name.PNG')">Sample Image</button>
+                    </div>
+                </div>
+
+                 <!-- ... Other Week tasks ... -->
+                 <div class="task-row">
+                    <div class="task-details">dulingo_updates</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('dulingo_update')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/dulingo_update.png')">Sample Image</button>
+                    </div>
+                </div>
+            </div>
+             
+
+            <!--Week2-->
+            
+            <div class="task-card">
+                <h2>Week 02 Task</h2>
+                <!-- Week 1 Tasks -->
+                <div class="task-row">
+                    <div class="task-details">create_wordpress_blog_and_7articles</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('create_wordpress_blog_and_7articles')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/create_wordpress_blog_and_7articles.PNG')">Sample Image</button>
+                    </div>
+                </div>
+                <!-- ... Other Week tasks ... -->
+                <div class="task-row">
+                    <div class="task-details">update_linkedin_with-photo</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('update_linkedin_with-photo')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/update_linkedin_with-photo.PNG')">Sample Image</button>
+                    </div>
+                </div>
+                <!-- ... Other Week tasks ... -->
+                <div class="task-row">
+                    <div class="task-details">create_canva-menu</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('create_canva-menu')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/create_canva-menu.png')">Sample Image</button>
+                    </div>
+                </div>
+                <!-- ... Other Week tasks ... -->
+                <div class="task-row">
+                    <div class="task-details">download_figma_and_install</div>
+                    <div class="task-actions">
+                        <button class="btn btn-primary copy-button" onclick="copyTaskName('download_figma_and_install')">Copy</button>
+                        <button class="btn btn-primary view-image-button" onclick="openImagePopup('Sample Images/download_figma_and_install.PNG')">Sample Image</button>
+                    </div>
+                </div>
+            </div>
+        </div>
         
         <div class="popup" onclick="closeImagePopup()">
             <button class="close-button" onclick="closeImagePopup()">&times;</button>
             <img src="" alt="Popup Image">
         </div>
+        <p class="text-center mt-5">
+            <strong>"If you have multiple screenshots for a task, make use of this   
+            <a href="https://merge.imageonline.co/" target="_blank">website</a> to merge"
+        </p>
     </div>
 </body>
 </html>
